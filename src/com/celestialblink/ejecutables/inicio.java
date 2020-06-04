@@ -26,6 +26,8 @@ public class inicio extends javax.swing.JFrame {
     private Timer tiempo;
     private int segundo=0;
     private ActionListener accion;
+    //empate
+    private int empate_k=0;
     /**
      * Creates new form inicio
      */
@@ -55,10 +57,6 @@ public class inicio extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         imm.setSize(this.getSize());
         this.getContentPane().add(imm);
-        
-//        jPanel3.add(imm);
-        System.out.println(jPanel3.getComponentCount());
-//        System.out.println(jPanel3.getComponent(4).getBounds().toString());
 
     }
     //true= "X" and false = "0"
@@ -90,7 +88,6 @@ public class inicio extends javax.swing.JFrame {
     }
     
     private void ganador(){
-        int count_win=0;
         String gano=null;
         for(int [] n:formas_ganado){
                     if(label[0].getText().equalsIgnoreCase("X") &&
@@ -100,7 +97,7 @@ public class inicio extends javax.swing.JFrame {
                             label[1].setBackground(new Color(217, 79, 222));
                             label[2].setBackground(new Color(217, 79, 222));
                             gano="X";
-                            count_win+=1;
+                            
                         }else if(
                        label[3].getText().equalsIgnoreCase("X") &&
                        label[4].getText().equalsIgnoreCase("X") &&
@@ -109,7 +106,6 @@ public class inicio extends javax.swing.JFrame {
                             label[4].setBackground(new Color(217, 79, 222));
                             label[5].setBackground(new Color(217, 79, 222));
                             gano="X";
-                            count_win+=1;
                         
                         } else if (
                        label[6].getText().equalsIgnoreCase("X") &&
@@ -119,7 +115,6 @@ public class inicio extends javax.swing.JFrame {
                             label[7].setBackground(new Color(217, 79, 222));
                             label[8].setBackground(new Color(217, 79, 222));
                             gano="X";
-                            count_win+=1;
                             
                         } else if (
                         label[0].getText().equalsIgnoreCase("X") &&
@@ -129,7 +124,6 @@ public class inicio extends javax.swing.JFrame {
                             label[3].setBackground(new Color(217, 79, 222));
                             label[6].setBackground(new Color(217, 79, 222));
                             gano="X";
-                            count_win+=1;
                             
                         }else if (
                         label[1].getText().equalsIgnoreCase("X") &&
@@ -139,7 +133,6 @@ public class inicio extends javax.swing.JFrame {
                             label[4].setBackground(new Color(217, 79, 222));
                             label[7].setBackground(new Color(217, 79, 222));
                             gano="X";
-                            count_win+=1;
                         
                         }else if (
                         label[2].getText().equalsIgnoreCase("X") &&
@@ -149,7 +142,6 @@ public class inicio extends javax.swing.JFrame {
                             label[5].setBackground(new Color(217, 79, 222));
                             label[8].setBackground(new Color(217, 79, 222));
                             gano="X";
-                            count_win+=1;
                         
                         }else if (
                         label[0].getText().equalsIgnoreCase("X") &&
@@ -159,7 +151,6 @@ public class inicio extends javax.swing.JFrame {
                             label[4].setBackground(new Color(217, 79, 222));
                             label[8].setBackground(new Color(217, 79, 222));
                             gano="X";
-                            count_win+=1;
                         
                         }else if (
                         label[2].getText().equalsIgnoreCase("X") &&
@@ -169,7 +160,6 @@ public class inicio extends javax.swing.JFrame {
                             label[4].setBackground(new Color(217, 79, 222));
                             label[6].setBackground(new Color(217, 79, 222));
                             gano="X";
-                            count_win+=1;
                         
                         }
                         else{
@@ -180,7 +170,7 @@ public class inicio extends javax.swing.JFrame {
                             label[1].setBackground(new Color(217, 79, 222));
                             label[2].setBackground(new Color(217, 79, 222));
                             gano="O";
-                            count_win+=1;
+                           
                         }else if(
                        label[3].getText().equalsIgnoreCase("O") &&
                        label[4].getText().equalsIgnoreCase("O") &&
@@ -189,7 +179,7 @@ public class inicio extends javax.swing.JFrame {
                             label[4].setBackground(new Color(217, 79, 222));
                             label[5].setBackground(new Color(217, 79, 222));
                             gano="O";
-                            count_win+=1;
+                            
                         
                         } else if (
                        label[6].getText().equalsIgnoreCase("O") &&
@@ -199,7 +189,7 @@ public class inicio extends javax.swing.JFrame {
                             label[7].setBackground(new Color(217, 79, 222));
                             label[8].setBackground(new Color(217, 79, 222));
                             gano="O";
-                            count_win+=1;
+                            
                             
                         
                         } else if (
@@ -210,7 +200,7 @@ public class inicio extends javax.swing.JFrame {
                             label[3].setBackground(new Color(217, 79, 222));
                             label[6].setBackground(new Color(217, 79, 222));
                             gano="O";
-                            count_win+=1;
+                            
                         
                             
                         }else if (
@@ -221,7 +211,7 @@ public class inicio extends javax.swing.JFrame {
                             label[4].setBackground(new Color(217, 79, 222));
                             label[7].setBackground(new Color(217, 79, 222));
                             gano="O";
-                            count_win+=1;
+                            
                         
                         }else if (
                         label[2].getText().equalsIgnoreCase("O") &&
@@ -231,7 +221,7 @@ public class inicio extends javax.swing.JFrame {
                             label[5].setBackground(new Color(217, 79, 222));
                             label[8].setBackground(new Color(217, 79, 222));
                             gano="O";
-                            count_win+=1;
+                            
                         
                         }else if (
                         label[0].getText().equalsIgnoreCase("O") &&
@@ -241,7 +231,7 @@ public class inicio extends javax.swing.JFrame {
                             label[4].setBackground(new Color(217, 79, 222));
                             label[8].setBackground(new Color(217, 79, 222));
                             gano="O";
-                            count_win+=1;
+                            
                         
                         }else if (
                         label[2].getText().equalsIgnoreCase("O") &&
@@ -251,7 +241,7 @@ public class inicio extends javax.swing.JFrame {
                             label[4].setBackground(new Color(217, 79, 222));
                             label[6].setBackground(new Color(217, 79, 222));
                             gano="O";
-                            count_win+=1;
+                           
                         
                         }
                         
@@ -265,8 +255,21 @@ public class inicio extends javax.swing.JFrame {
                 anunciar_ganador(">"+gano+"<");
             }
         }
-        
+        empate(label);
     }
+
+    private void empate(JLabel[] L){
+        for (JLabel l:L){
+            if (l.getText().trim()!=""){
+                empate_k+=1;
+                break;
+            }
+        }
+        if(empate_k==9){
+            reinicio();
+        }
+    }
+    
     private void reinicio(){
         int k=0;
         for(JLabel o:label){
@@ -276,6 +279,7 @@ public class inicio extends javax.swing.JFrame {
          k+=1;
         }
         tur=true;
+        empate_k=0;
         
     }
     
@@ -334,6 +338,8 @@ public class inicio extends javax.swing.JFrame {
         jDialog1 = new javax.swing.JDialog();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jDialog2 = new javax.swing.JDialog();
+        jLabel15 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -381,6 +387,25 @@ public class inicio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(56, Short.MAX_VALUE))
+        );
+
+        jLabel15.setText("SDKJSD");
+
+        javax.swing.GroupLayout jDialog2Layout = new javax.swing.GroupLayout(jDialog2.getContentPane());
+        jDialog2.getContentPane().setLayout(jDialog2Layout);
+        jDialog2Layout.setHorizontalGroup(
+            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog2Layout.createSequentialGroup()
+                .addGap(132, 132, 132)
+                .addComponent(jLabel15)
+                .addContainerGap(252, Short.MAX_VALUE))
+        );
+        jDialog2Layout.setVerticalGroup(
+            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog2Layout.createSequentialGroup()
+                .addGap(97, 97, 97)
+                .addComponent(jLabel15)
+                .addContainerGap(187, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -542,13 +567,13 @@ public class inicio extends javax.swing.JFrame {
         jLabel13.setBackground(new java.awt.Color(255, 0, 51));
         jLabel13.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 1, 48)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("X => ");
+        jLabel13.setText("  X => ");
         jLabel13.setOpaque(true);
 
         jLabel14.setBackground(new java.awt.Color(0, 0, 255));
         jLabel14.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 1, 48)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("O => ");
+        jLabel14.setText("  O => ");
         jLabel14.setOpaque(true);
 
         jlabel_turno.setBackground(new java.awt.Color(153, 153, 153));
@@ -782,12 +807,14 @@ public class inicio extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JDialog jDialog1;
+    private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
